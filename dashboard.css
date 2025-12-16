@@ -347,3 +347,70 @@ main {
     visibility: visible;
     opacity: 1;
 }
+
+/* =======================
+   📱 CELULAR PEQUEÑO
+   ======================= */
+@media (max-width: 480px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =======================
+   📱 CELULAR GRANDE
+   ======================= */
+@media (min-width: 481px) and (max-width: 767px) {
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+}
+
+/* =======================
+   📲 TABLET
+   ======================= */
+@media (min-width: 768px) and (max-width: 991px) {
+    .hero-container,
+    .nosotros-container,
+    .contacto-container {
+        flex-direction: column;
+    }
+
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =======================
+   💻 PC / ESCRITORIO
+   ======================= */
+@media (min-width: 992px) {
+    .productos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
