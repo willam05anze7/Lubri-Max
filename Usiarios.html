@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LubriMax - Usuarios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="usuarios.css">
+</head>
+<body>
+    <div class="usuarios-container" id="usuariosContainer">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-oil-can"></i>
+                <h2>Lubri<span>Max</span></h2>
+                <p class="logo-subtitle">Panel de Usuarios</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active" data-section="login">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Iniciar Sesión</span>
+                    </li>
+                    <li class="nav-item" data-section="register">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Registrarse</span>
+                    </li>
+                    <li class="nav-item" data-section="profile">
+                        <i class="fas fa-user"></i>
+                        <span>Mi Perfil</span>
+                    </li>
+                    <li class="nav-item" data-section="orders">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>Mis Pedidos</span>
+                    </li>
+                    <li class="nav-item" data-section="wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span>Favoritos</span>
+                    </li>
+<li class="nav-item">
+    <a class="nav-link" href="dashboard.html">
+        <i class="fas fa-chart-line me-2"></i>
+        Dashboard Admin
+    </a>
+</li>
+                    <li class="nav-item" data-section="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Configuración</span>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info" id="userInfo">
+                    <p>No has iniciado sesión</p>
+                </div>
+                <button class="btn-logout" id="btnLogout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Cerrar Sesión
+                </button>
+                <a href="index.html" class="btn-return">
+                    <i class="fas fa-store"></i>
+                    Volver a la Tienda
+                </a>
+            </div>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <!-- Sección de Inicio de Sesión -->
+            <section class="content-section active" id="login">
+                <div class="section-header">
+                    <h1><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</h1>
+                    <p>Accede a tu cuenta para ver tus pedidos y favoritos</p>
+                </div>
+                
+                <div class="login-form">
+                    <form id="formLogin">
+                        <div class="form-group">
+                            <label for="loginEmail">
+                                <i class="fas fa-envelope"></i> Correo Electrónico
+                            </label>
+                            <input type="email" id="loginEmail" placeholder="tucorreo@ejemplo.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="loginPassword">
+                                <i class="fas fa-lock"></i> Contraseña
+                            </label>
+                            <div class="password-container">
+                                <input type="password" id="loginPassword" placeholder="Tu contraseña" required>
+                                <button type="button" class="toggle-password" id="toggleLoginPassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="rememberMe">
+                                <span class="checkmark"></span>
+                                Recordar mi sesión
+                            </label>
+                            <a href="#" class="forgot-password" id="forgotPassword">¿Olvidaste tu contraseña?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-login">
+                            <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                        </button>
+                        
+                        <div class="divider">
+                            <span>O continúa con</span>
+                        </div>
+                        
+                        <div class="social-login">
+                            <button type="button" class="btn-social btn-google">
+                                <i class="fab fa-google"></i> Google
+                            </button>
+                            <button type="button" class="btn-social btn-facebook">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section class="content-section" id="register">
+                <div class="section-header">
+                    <h1><i class="fas fa-user-plus"></i> Crear Cuenta</h1>
+                    <p>Únete a LubriMax y disfruta de beneficios exclusivos</p>
+                </div>
+                
+                <div class="register-form">
+                    <form id="formRegister">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="registerNombre">
+                                    <i class="fas fa-user"></i> Nombre
+                                </label>
+                                <input type="text" id="registerNombre" placeholder="Tu nombre" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="registerApellido">
+                                    <i class="fas fa-user"></i> Apellido
+                                </label>
+                                <input type="text" id="registerApellido" placeholder="Tu apellido" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="registerEmail">
+                                <i class="fas fa-envelope"></i> Correo Electrónico
+                            </label>
+                            <input type="email" id="registerEmail" placeholder="tucorreo@ejemplo.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="registerTelefono">
+                                <i class="fas fa-phone"></i> Teléfono
+                            </label>
+                            <input type="tel" id="registerTelefono" placeholder="+51 987 654 321">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="registerPassword">
+                                    <i class="fas fa-lock"></i> Contraseña
+                                </label>
+                                <div class="password-container">
+                                    <input type="password" id="registerPassword" placeholder="Crea una contraseña" required>
+                                    <button type="button" class="toggle-password" id="toggleRegisterPassword">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="registerConfirmPassword">
+                                    <i class="fas fa-lock"></i> Confirmar Contraseña
+                                </label>
+                                <div class="password-container">
+                                    <input type="password" id="registerConfirmPassword" placeholder="Repite tu contraseña" required>
+                                    <button type="button" class="toggle-password" id="toggleConfirmPassword">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="acceptTerms" required>
+                                <span class="checkmark"></span>
+                                Acepto los <a href="#" class="terms-link">Términos y Condiciones</a> y la <a href="#" class="terms-link">Política de Privacidad</a>
+                            </label>
+                            
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="newsletter">
+                                <span class="checkmark"></span>
+                                Quiero recibir ofertas y novedades por email
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-register">
+                            <i class="fas fa-user-plus"></i> Crear Cuenta
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="content-section" id="profile">
+                <div class="section-header">
+                    <h1><i class="fas fa-user"></i> Mi Perfil</h1>
+                    <p>Gestiona tu información personal</p>
+                </div>
+                
+                <div class="profile-container" id="profileContainer">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Usuario+LubriMax&background=2c3e50&color=fff&size=128" 
+                                 alt="Avatar" id="profileAvatar">
+                            <button class="btn-change-avatar" id="btnChangeAvatar">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                        </div>
+                        <div class="profile-info">
+                            <h2 id="profileName">Usuario LubriMax</h2>
+                            <p class="profile-email" id="profileEmail">usuario@ejemplo.com</p>
+                            <p class="profile-member">Miembro desde: <span id="memberSince">Ene 2024</span></p>
+                        </div>
+                    </div>
+                    
+                    <form class="profile-form" id="formProfile">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="profileNombre">
+                                    <i class="fas fa-user"></i> Nombre
+                                </label>
+                                <input type="text" id="profileNombre" placeholder="Tu nombre" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="profileApellido">
+                                    <i class="fas fa-user"></i> Apellido
+                                </label>
+                                <input type="text" id="profileApellido" placeholder="Tu apellido" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profileEmail">
+                                <i class="fas fa-envelope"></i> Correo Electrónico
+                            </label>
+                            <input type="email" id="profileEmail" placeholder="tucorreo@ejemplo.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profileTelefono">
+                                <i class="fas fa-phone"></i> Teléfono
+                            </label>
+                            <input type="tel" id="profileTelefono" placeholder="+51 987 654 321">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profileDireccion">
+                                <i class="fas fa-map-marker-alt"></i> Dirección
+                            </label>
+                            <textarea id="profileDireccion" placeholder="Tu dirección completa" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Guardar Cambios
+                            </button>
+                            <button type="button" class="btn btn-secondary" id="btnChangePassword">
+                                <i class="fas fa-lock"></i> Cambiar Contraseña
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section class="content-section" id="orders">
+                <div class="section-header">
+                    <h1><i class="fas fa-shopping-bag"></i> Mis Pedidos</h1>
+                    <p>Historial y seguimiento de tus compras</p>
+                </div>
+                
+                <div class="orders-container" id="ordersContainer">
+                </div>
+            </section>
+
+            <section class="content-section" id="wishlist">
+                <div class="section-header">
+                    <h1><i class="fas fa-heart"></i> Mis Favoritos</h1>
+                    <p>Productos que has guardado para después</p>
+                </div>
+                
+                <div class="wishlist-container" id="wishlistContainer">
+                </div>
+            </section>
+
+            <section class="content-section" id="settings">
+                <div class="section-header">
+                    <h1><i class="fas fa-cog"></i> Configuración</h1>
+                    <p>Personaliza tu experiencia en LubriMax</p>
+                </div>
+                
+                <div class="settings-container">
+                    <div class="settings-section">
+                        <h3><i class="fas fa-bell"></i> Notificaciones</h3>
+                        <div class="settings-group">
+                            <label class="switch-container">
+                                <span>Notificaciones por email</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="notifyEmail" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </label>
+                            
+                            <label class="switch-container">
+                                <span>Ofertas especiales</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="notifyOffers" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </label>
+                            
+                            <label class="switch-container">
+                                <span>Recordatorios de mantenimiento</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="notifyMaintenance">
+                                    <span class="slider"></span>
+                                </label>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-section">
+                        <h3><i class="fas fa-shield-alt"></i> Seguridad</h3>
+                        <div class="settings-group">
+                            <button class="btn-security" id="btnSecurityChangePassword">
+                                <i class="fas fa-lock"></i> Cambiar Contraseña
+                            </button>
+                            <button class="btn-security" id="btnSecurity2FA">
+                                <i class="fas fa-mobile-alt"></i> Autenticación en Dos Pasos
+                            </button>
+                            <button class="btn-security" id="btnSecuritySessions">
+                                <i class="fas fa-desktop"></i> Sesiones Activas
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-section">
+                        <h3><i class="fas fa-trash-alt"></i> Eliminar Cuenta</h3>
+                        <p class="danger-text">Esta acción es irreversible. Se eliminarán todos tus datos.</p>
+                        <button class="btn btn-danger" id="btnDeleteAccount">
+                            <i class="fas fa-trash-alt"></i> Eliminar Mi Cuenta
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="modal" id="passwordModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-lock"></i> Cambiar Contraseña</h3>
+                <button class="modal-close" id="closePasswordModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="formChangePassword">
+                    <div class="form-group">
+                        <label for="currentPassword">Contraseña Actual</label>
+                        <div class="password-container">
+                            <input type="password" id="currentPassword" required>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="newPassword">Nueva Contraseña</label>
+                        <div class="password-container">
+                            <input type="password" id="newPassword" required>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="password-strength" id="passwordStrength">
+                            <div class="strength-bar"></div>
+                            <span class="strength-text">Seguridad: Baja</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmNewPassword">Confirmar Nueva Contraseña</label>
+                        <div class="password-container">
+                            <input type="password" id="confirmNewPassword" required>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <button type="submit" class="btn btn-primary">Cambiar Contraseña</button>
+                        <button type="button" class="btn btn-secondary" id="cancelPasswordChange">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="recoveryModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-key"></i> Recuperar Contraseña</h3>
+                <button class="modal-close" id="closeRecoveryModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="formRecovery">
+                    <div class="form-group">
+                        <label for="recoveryEmail">Correo Electrónico</label>
+                        <input type="email" id="recoveryEmail" placeholder="tucorreo@ejemplo.com" required>
+                    </div>
+                    <p class="modal-info">Te enviaremos un enlace para restablecer tu contraseña.</p>
+                    <div class="modal-actions">
+                        <button type="submit" class="btn btn-primary">Enviar Enlace</button>
+                        <button type="button" class="btn btn-secondary" id="cancelRecovery">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="usuarios.js"></script>
+</body>
+</html>

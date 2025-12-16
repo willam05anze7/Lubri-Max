@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LubriMax - Tienda de Lubricantes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-oil-can"></i>
+                <h1>Lubri<span>Max</span></h1>
+            </div>
+            <button class="menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="Usiarios.html" class="nav-link">Mi Cuenta</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li>
+    <a href="dashboard.html" class="nav-link">
+        <i class="fas fa-tachometer-alt"></i>
+        Dashboard
+    </a>
+</li>
+                <li class="carrito-icon">
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="carrito-contador" id="carritoContador">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero" id="inicio">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <h2>Lubricantes de <span>Alta Calidad</span></h2>
+                <p>Protege tu motor con los mejores aceites sintéticos y lubricantes especializados para todo tipo de vehículos y maquinaria.</p>
+                <div class="hero-btns">
+                    <a href="#productos" class="btn btn-primary">Ver Productos</a>
+                    <a href="#contacto" class="btn btn-secondary">Contactar</a>
+                </div>
+            </div>
+            <div class="hero-img">
+                <img src="assets/imagenes/Tirulo.png" alt="Lubricantes">
+            </div>
+        </div>
+    </header>
+
+    <section class="productos" id="productos">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <p class="section-desc">Selección de lubricantes premium para todas las necesidades</p>
+            
+            <div class="filtros">
+                <button class="filtro-btn active" data-categoria="todos">Todos</button>
+                <button class="filtro-btn" data-categoria="automovil">Automóvil</button>
+                <button class="filtro-btn" data-categoria="moto">Motocicleta</button>
+                <button class="filtro-btn" data-categoria="industrial">Industrial</button>
+            </div>
+            
+            <div class="productos-grid">
+                <div class="producto-card" data-categoria="automovil">
+                    <div class="producto-img">
+                        <img src="assets/imagenes/Aceite-Sintético-5W-30.png" alt="Aceite Sintético">
+                        <span class="producto-badge">Más Vendido</span>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Aceite Sintético 5W-30</h3>
+                        <p class="producto-desc">Aceite full sintético para alto rendimiento. Protección superior del motor.</p>
+                        <div class="producto-precio">
+                            <span class="precio">$24.99</span>
+                            <span class="precio-old">$29.99</span>
+                        </div>
+                        <button class="btn-agregar" data-id="1">
+                            <i class="fas fa-cart-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="producto-card" data-categoria="automovil">
+                    <div class="producto-img">
+                        <img src="assets/imagenes/Aceite-Mineral-10W-40.png" alt="Aceite Mineral">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Aceite Mineral 10W-40</h3>
+                        <p class="producto-desc">Aceite mineral para motores a gasolina. Cambio cada 5,000 km.</p>
+                        <div class="producto-precio">
+                            <span class="precio">$18.50</span>
+                        </div>
+                        <button class="btn-agregar" data-id="2">
+                            <i class="fas fa-cart-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="producto-card" data-categoria="moto">
+                    <div class="producto-img">
+                        <img src="assets/imagenes/Aceite-para-Moto-4T.png" alt="Aceite para Moto">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Aceite para Moto 4T</h3>
+                        <p class="producto-desc">Especial para motores de 4 tiempos. Alto rendimiento y protección.</p>
+                        <div class="producto-precio">
+                            <span class="precio">$22.99</span>
+                        </div>
+                        <button class="btn-agregar" data-id="3">
+                            <i class="fas fa-cart-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="producto-card" data-categoria="industrial">
+                    <div class="producto-img">
+                        <img src="assets/imagenes/Grasa-Industrial.png" alt="Grasa Industrial">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Grasa Industrial</h3>
+                        <p class="producto-desc">Grasa multipropósito para aplicaciones industriales. Resistente al agua.</p>
+                        <div class="producto-precio">
+                            <span class="precio">$15.75</span>
+                        </div>
+                        <button class="btn-agregar" data-id="4">
+                            <i class="fas fa-cart-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="producto-card" data-categoria="automovil">
+                    <div class="producto-img">
+                        <img src="assets/imagenes/Aceite-Transmisión-ATF.png" alt="Aceite Transmisión">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Aceite Transmisión ATF</h3>
+                        <p class="producto-desc">Fluido para transmisiones automáticas. Extiende la vida útil.</p>
+                        <div class="producto-precio">
+                            <span class="precio">$27.50</span>
+                        </div>
+                        <button class="btn-agregar" data-id="5">
+                            <i class="fas fa-cart-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+                <div class="producto-card" data-categoria="industrial">
+                    <div class="producto-img">
+                        <img src="assets/imagenes/Aceite-Hidraulico.png" alt="Aceite Hidráulico">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Aceite Hidráulico</h3>
+                        <p class="producto-desc">Para sistemas hidráulicos industriales. Anti-desgaste.</p>
+                        <div class="producto-precio">
+                            <span class="precio">$32.99</span>
+                        </div>
+                        <button class="btn-agregar" data-id="6">
+                            <i class="fas fa-cart-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="nosotros" id="nosotros">
+        <div class="container">
+            <div class="nosotros-container">
+                <div class="nosotros-img">
+                    <img src="assets/imagenes/Tallaer.png" alt="Taller">
+                </div>
+                <div class="nosotros-text">
+                    <h2 class="section-title">¿Por qué LubriMax?</h2>
+                    <p>Somos especialistas en lubricantes con más de 10 años de experiencia. Ofrecemos productos de calidad premium y asesoría técnica especializada.</p>
+                    
+                    <div class="ventajas">
+                        <div class="ventaja">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Calidad Garantizada</h3>
+                            <p>Productos de marcas líderes mundiales</p>
+                        </div>
+                        <div class="ventaja">
+                            <i class="fas fa-truck"></i>
+                            <h3>Envío Rápido</h3>
+                            <p>Entrega en 24-48 horas en toda la ciudad</p>
+                        </div>
+                        <div class="ventaja">
+                            <i class="fas fa-headset"></i>
+                            <h3>Asesoría Técnica</h3>
+                            <p>Te ayudamos a elegir el producto correcto</p>
+                        </div>
+                        <div class="ventaja">
+                            <i class="fas fa-tags"></i>
+                            <h3>Mejores Precios</h3>
+                            <p>Precios competitivos y ofertas especiales</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contáctanos</h2>
+            <p class="section-desc">¿Necesitas asesoría? Escríbenos y te ayudaremos</p>
+            
+            <div class="contacto-container">
+                <div class="contacto-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Ubicación</h3>
+                            <p>Av. Principal #456, Ciudad</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>(01) 234-5678</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>ventas@lubrimax.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Horario</h3>
+                            <p>Lun-Vie: 8:00 - 18:00</p>
+                            <p>Sáb: 9:00 - 14:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contacto-form" id="contactoForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Teléfono">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-oil-can"></i>
+                        <h2>Lubri<span>Max</span></h2>
+                    </div>
+                    <p>Tu tienda de confianza para lubricantes de calidad. Protege tu motor con los mejores productos.</p>
+                    <div class="social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Categorías</h3>
+                    <ul>
+                        <li><a href="#">Automóvil</a></li>
+                        <li><a href="#">Motocicleta</a></li>
+                        <li><a href="#">Industrial</a></li>
+                        <li><a href="#">Especiales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Suscríbete para ofertas exclusivas</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Tu email">
+                        <button class="btn btn-primary">Suscribir</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 LubriMax. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="carrito-modal" id="carritoModal">
+        <div class="carrito-content">
+            <div class="carrito-header">
+                <h3>Tu Carrito</h3>
+                <button class="cerrar-carrito" id="cerrarCarrito">&times;</button>
+            </div>
+            <div class="carrito-items" id="carritoItems">
+            </div>
+            <div class="carrito-total">
+                <p>Total: <span id="carritoTotal">$0.00</span></p>
+                <button class="btn btn-primary">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
